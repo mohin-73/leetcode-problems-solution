@@ -23,8 +23,8 @@ public:
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
+    vector<int> nums = {2, 2, 1, 1, 1, 2, 2};
     Solution solution;
-    vector<int> nums = {2,2,1,1,1,2,2};
     int ans = solution.majorityElement(nums);
     cout << ans << '\n';
     return 0;
