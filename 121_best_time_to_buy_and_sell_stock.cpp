@@ -18,8 +18,8 @@ public:
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    Solution solution;
     vector<int> prices = {7, 1, 5, 3, 6, 4};
+    Solution solution;
     int max_profit = solution.maxProfit(prices);
     cout << max_profit << '\n';
     return 0;
