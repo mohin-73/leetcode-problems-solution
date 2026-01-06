@@ -5,15 +5,15 @@ using namespace std;
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int max_sum = nums[0], curr_sum = 0;
+        int maxSum = nums[0], currSum = 0;
         for (int i = 0; i < nums.size(); ++i) {
-            curr_sum += nums[i];
-            max_sum = max(max_sum, curr_sum);
-            if (curr_sum < 0) {
-                curr_sum = 0;
+            currSum += nums[i];
+            maxSum = max(maxSum, currSum);
+            if (currSum < 0) {
+                currSum = 0;
             }
         }
-        return max_sum;
+        return maxSum;
     }
 };
 
@@ -22,7 +22,7 @@ int main() {
     cin.tie(nullptr);
     vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
     Solution solution;
-    int max_subarray_sum = solution.maxSubArray(nums);
-    cout << max_subarray_sum << '\n';
+    int maxSum = solution.maxSubArray(nums);
+    cout << maxSum << '\n';
     return 0;
 }
