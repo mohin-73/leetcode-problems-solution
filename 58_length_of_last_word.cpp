@@ -6,15 +6,15 @@ class Solution {
 public:
     int lengthOfLastWord(string s) {
         int len = s.length() - 1;
-        int last_word_length = 0;
+        int lastWordLength = 0;
         while (len >= 0 && s[len] == ' ') {
             --len;
         }
         while (len >= 0 && s[len] != ' ') {
-            ++last_word_length;
+            ++lastWordLength;
             --len;
         }
-        return last_word_length;
+        return lastWordLength;
     }
 };
 
@@ -23,7 +23,7 @@ int main() {
     cin.tie(nullptr);
     string str = "   fly me   to   the moon  ";
     Solution solution;
-    int length = solution.lengthOfLastWord(str);
-    cout << length << '\n';
+    int lastWordLength = solution.lengthOfLastWord(str);
+    cout << lastWordLength << '\n';
     return 0;
 }
