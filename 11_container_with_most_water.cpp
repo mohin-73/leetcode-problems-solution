@@ -21,7 +21,7 @@ int main() {
     cin.tie(nullptr);
     vector<int> height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
     Solution solution;
-    int ans = solution.maxArea(height);
-    cout << ans << '\n';
+    int maxWater = solution.maxArea(height);
+    cout << maxWater << '\n';
     return 0;
 }
