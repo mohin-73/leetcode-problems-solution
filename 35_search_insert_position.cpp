@@ -27,7 +27,7 @@ int main() {
     vector<int> nums = {3, 4, 5, 7};
     int target = 8;
     Solution solution;
-    int pos = solution.searchInsert(nums, target);
-    cout << pos << '\n';
+    int position = solution.searchInsert(nums, target);
+    cout << position << '\n';
     return 0;
 }
