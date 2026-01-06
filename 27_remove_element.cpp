@@ -24,7 +24,7 @@ int main() {
     vector<int> nums = {3, 2, 2, 3};
     int val = 2;
     Solution solution;
-    int el = solution.removeElement(nums, val);
-    cout << el << '\n';
+    int element = solution.removeElement(nums, val);
+    cout << element << '\n';
     return 0;
 }
