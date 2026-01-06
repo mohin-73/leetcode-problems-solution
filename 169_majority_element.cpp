@@ -25,7 +25,7 @@ int main() {
     cin.tie(nullptr);
     vector<int> nums = {2, 2, 1, 1, 1, 2, 2};
     Solution solution;
-    int ans = solution.majorityElement(nums);
-    cout << ans << '\n';
+    int element = solution.majorityElement(nums);
+    cout << element << '\n';
     return 0;
 }
