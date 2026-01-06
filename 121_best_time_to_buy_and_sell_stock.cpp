@@ -5,13 +5,13 @@ using namespace std;
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int min_buying_price = prices[0];
-        int max_profit = 0;
+        int minBuyingPrice = prices[0];
+        int maxProfit = 0;
         for (int current = 1; current < prices.size(); ++current) {
-            max_profit = max(max_profit, prices[current] - min_buying_price);
-            min_buying_price = min(min_buying_price, prices[current]);
+            maxProfit = max(maxProfit, prices[current] - minBuyingPrice);
+            minBuyingPrice = min(minBuyingPrice, prices[current]);
         }
-        return max_profit;
+        return maxProfit;
     }
 };
 
@@ -20,7 +20,7 @@ int main() {
     cin.tie(nullptr);
     vector<int> prices = {7, 1, 5, 3, 6, 4};
     Solution solution;
-    int max_profit = solution.maxProfit(prices);
-    cout << max_profit << '\n';
+    int maxProfit = solution.maxProfit(prices);
+    cout << maxProfit << '\n';
     return 0;
 }
