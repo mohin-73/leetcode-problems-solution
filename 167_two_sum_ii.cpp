@@ -5,12 +5,10 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        vector<int> index;
         int j = numbers.size() - 1;
         for (int i = 0; i < j; ++i) {
             if (numbers[i] + numbers[j] == target) {
-                index.push_back(i + 1);
-                index.push_back(j + 1);
+                return {i + 1, j + 1};
                 i = j;
                 break;
             } else if (numbers[i] + numbers[j] > target) {
@@ -18,7 +16,7 @@ public:
                 --i;
             }
         }
-        return index;
+        return {};
     }
 };
 
