@@ -5,8 +5,8 @@ using namespace std;
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        int left = 0, right = 0, maxLen = 0;
         vector<bool> present(256, false);
+        int left = 0, right = 0, maxLen = 0;
         while (right < s.length()) {
             if (!present[s[right]]) {
                 present[s[right]] = true;
@@ -24,7 +24,7 @@ public:
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    string s = "l;gn*sln%gh";
+    string s = "abcabcbb";
     Solution solve;
     int result = solve.lengthOfLongestSubstring(s);
     cout << result << '\n';
