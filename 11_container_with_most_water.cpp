@@ -5,8 +5,7 @@ using namespace std;
 class Solution {
 public:
     int maxArea(vector<int>& height) {
-        int left = 0, right = height.size() - 1;
-        int maxWater = 0;
+        int left = 0, right = height.size() - 1, maxWater = 0;
         while (right > left) {
             int water = (right - left) * min(height[left], height[right]);
             maxWater = max(maxWater, water);
@@ -36,7 +35,7 @@ int main() {
     Find two lines that together with the x-axis form a container, such that the container
     contains the most water. Return the maximum amount of water a container can store.
     Notice that you may not slant the container.
-    
+
     ----------
     Example 1:
     ----------
