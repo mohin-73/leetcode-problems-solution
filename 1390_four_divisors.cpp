@@ -17,9 +17,6 @@ public:
                     ++divisorCount;
                     sum += j;
                 }
-                if (divisorCount > 4) {
-                    break;
-                }
             }
             if (divisorCount == 4) {
                 divisorSum += sum;
