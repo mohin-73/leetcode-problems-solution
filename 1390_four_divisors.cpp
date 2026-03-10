@@ -7,23 +7,22 @@ public:
     int sumFourDivisors(vector<int>& nums) {
         int divisorSum = 0;
         for (int i = 0; i < nums.size(); ++i) {
-            int sqr = sqrt(nums[i]);
-            if (sqr * sqr == nums[i]) {
-                continue;
-            }
-            int temp = nums[i], cnt = 0, a, b;
-            for (int j = 2; j * j <= temp; ++j) {
-                if (temp % j == 0) {
-                    ++cnt;
-                    a = j;
-                    b = temp / j;
+            int divisorCount = 0, sum = 0;
+            for (int j = 1; j * j <= nums[i]; ++j) {
+                if (nums[i] % j == 0 && (nums[i] / j) != j) {
+                    divisorCount += 2;
+                    sum += j + nums[i] / j;
                 }
-                if (cnt > 1) {
+                if (nums[i] % j == 0 && (nums[i] / j) == j) {
+                    ++divisorCount;
+                    sum += j;
+                }
+                if (divisorCount > 4) {
                     break;
                 }
             }
-            if (cnt == 1) {
-                divisorSum += (1 + nums[i] + a + b);
+            if (divisorCount == 4) {
+                divisorSum += sum;
             }
         }
         return divisorSum;
