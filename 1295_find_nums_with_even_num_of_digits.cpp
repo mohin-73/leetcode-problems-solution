@@ -17,7 +17,7 @@ public:
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    vectors<int> nums = {12, 345, 2, 6, 7896};
+    vector<int> nums = {12, 345, 2, 6, 7896};
     Solution solve;
     int result = solve.findNumbers(nums);
     cout << result << '\n';
