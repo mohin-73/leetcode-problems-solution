@@ -21,7 +21,7 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-    Solution solution;
+    Solution solve;
     int result = solve.maxSubArray(nums);
     cout << result << '\n';
     return 0;
