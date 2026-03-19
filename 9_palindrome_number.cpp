@@ -5,7 +5,10 @@ using namespace std;
 class Solution {
 public:
     bool isPalindrome(int x) {
-        long long temp = abs(1LL * x), y = 0;
+        if (x < 0) {
+            return false;
+        }
+        long long temp = x, y = 0;
         while (temp) {
             y = y * 10 + temp % 10;
             temp /= 10;
@@ -20,11 +23,7 @@ int main() {
     int x = 121;
     Solution solve;
     bool result = solve.isPalindrome(x);
-    if (result) {
-        cout << "true\n";
-    } else {
-        cout << "false\n";
-    }
+    cout << (result ? "true\n" : "false\n");
     return 0;
 }
 
