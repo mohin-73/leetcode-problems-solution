@@ -6,10 +6,11 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         unordered_map<int, int> numToIdx;
-        for (int i = 0; i < nums.size(); ++i) {
-            int reqNum = target - nums[i];
-            if (numToIdx.find(reqNum) != numToIdx.end()) {
-                return {numToIdx[reqNum], i};
+        for (int i = 0, n = nums.size(); i < n; ++i) {
+            int complement = target - nums[i];
+            auto it = numToIdx.find(complement);
+            if (it != numToIdx.end()) {
+                return {it->second, i};
             }
             numToIdx[nums[i]] = i;
         }
