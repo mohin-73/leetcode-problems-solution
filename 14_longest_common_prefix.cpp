@@ -9,7 +9,7 @@ public:
         for (int i = 0; i < n; ++i) {
             minLen = min(minLen, (int)strs[i].length());
         }
-        string commonPrefix = "";
+        string commonPrefix;
         for (int i = 0; i < minLen; ++i) {
             char ch = strs[0][i];
             for (int j = 1; j < n; ++j) {
