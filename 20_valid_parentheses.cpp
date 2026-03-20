@@ -5,20 +5,33 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-        stack<char> stk;
-        for (char c : s) {
-            if (c == '(' || c == '{' || c == '[') {
-                stk.push(c);
+        stack<char> openBrackets;
+        for (char bracket : s) {
+            if (isOpenBracket(bracket)) {
+                openBrackets.push(bracket);
                 continue;
             }
-            if (stk.empty()) return false;
-            char op = stk.top();
-            stk.pop();
-            if (op == '(' && c != ')') return false;
-            if (op == '{' && c != '}') return false;
-            if (op == '[' && c != ']') return false;
+            if (openBrackets.empty()) {
+                return false;
+            }
+            char lastOpen = openBrackets.top();
+            openBrackets.pop();
+            if (!isMatching(lastOpen, bracket)) {
+                return false;
+            }
         }
-        return stk.empty();
+        return openBrackets.empty();
+    }
+
+private:
+    bool isOpenBracket(char c) {
+        return c == '(' || c == '{' || c == '[';
+    }
+    bool isMatching(char open, char close) {
+        bool first = open == '(' && close == ')';
+        bool second = open == '{' && close == '}';
+        bool third = open == '[' && close == ']';
+        return first || second || third;
     }
 };
 
@@ -28,11 +41,7 @@ int main() {
     string str = "([{}])";
     Solution solve;
     bool result = solve.isValid(str);
-    if (result) {
-        cout << "true\n";
-    } else {
-        cout << "false\n";
-    }
+    cout << (result ? "true\n" : "false\n");
     return 0;
 }
 
