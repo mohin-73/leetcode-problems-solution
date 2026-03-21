@@ -49,7 +49,7 @@ int main() {
         for (int j = 0; j < result[i].size(); ++j) {
             cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ",");
         }
-        cout << ((i == result.size() - 1) ? "]" : "],");
+        cout << (i + 1 == result.size() ? "]" : "],");
     }
     cout << "]\n";
     return 0;
