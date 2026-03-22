@@ -8,8 +8,7 @@ public:
         int left = 0, right = nums.size() - 1;
         while (right >= left) {
             if (nums[left] == val) {
-                swap(nums[left], nums[right]);
-                --right;
+                swap(nums[left], nums[right--]);
             } else {
                 ++left;
             }
@@ -21,11 +20,19 @@ public:
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    vector<int> nums = {3, 2, 2, 3};
-    int val = 3;
+    vector<int> nums = {0, 1, 2, 2, 3, 0, 4, 2};
+    int val = 2;
     Solution solve;
-    int result = solve.removeElement(nums, val);
-    cout << result << '\n';
+    int k = solve.removeElement(nums, val);
+    cout << "[";
+    for (int i = 0; i < nums.size(); ++i) {
+        if (i < k ) {
+            cout << nums[i];
+        } else {
+            cout << "_";
+        }
+        cout << (i + 1 == nums.size() ? "]\n" : ",");
+    }
     return 0;
 }
 
